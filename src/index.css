@@ -136,3 +136,10 @@ table {
     box-sizing: border-box;
     font-family: 'Poppins';
 }
+
+.colonnes__container {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    overflow: hidden;
+}

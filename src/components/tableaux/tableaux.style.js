@@ -25,6 +25,7 @@ export const TableauxContainer = styled.div`
             padding: 20px;
             border-radius: 8px;
             cursor: pointer;
+            height: 85px;
 
             &.empty {
                 height: 82px;
@@ -39,6 +40,11 @@ export const TableauxContainer = styled.div`
             h3 {
                 font-size: 1.2rem;
             }
+
+            &:link, &:visited, &:active {
+                    text-decoration: none;
+                    color: #000;
+            } 
         }
     }
 

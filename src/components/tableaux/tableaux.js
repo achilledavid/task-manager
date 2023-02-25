@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { TableauxContainer } from './tableaux.style';
 
 const Tableaux = () => {
@@ -16,6 +16,7 @@ const Tableaux = () => {
         const response = await fetch("/tableaux");
         const data = await response.json();
         setTableaux(data);
+        console.log(data[1].colonnes)
     }
 
     const goToTableau = () => {
@@ -38,10 +39,10 @@ const Tableaux = () => {
                     </>
                 }
                 {tableaux.map((tableau) => (
-                    <div className='tableaux__card' key={tableau.id} tableau={tableau} onClick={goToTableau}>
+                    <Link className='tableaux__card' key={tableau.id} to={`/tableau/${tableau.id}`}>
                         <h3>{tableau.nom}</h3>
                         <p>{tableau.description}</p>
-                    </div>
+                    </Link>
                 ))}
             </TableauxContainer>
         </>
